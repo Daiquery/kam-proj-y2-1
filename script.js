@@ -28,6 +28,7 @@ function createItem() {
   var newRow = document.createElement("tr");
   var indexData = document.createElement("td");
   var itemData = document.createElement("td");
+  
   // append 2 pieces of data to new row,
   indexData.innerHTML = `${order}`;
   itemData.innerHTML = `${item}`;
