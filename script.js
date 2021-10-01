@@ -28,7 +28,7 @@ function createItem() {
   var newRow = document.createElement("tr");
   var indexData = document.createElement("td");
   var itemData = document.createElement("td");
-  
+
   // append 2 pieces of data to new row,
   indexData.innerHTML = `${order}`;
   itemData.innerHTML = `${item}`;
@@ -40,11 +40,16 @@ function createItem() {
 }
 
 function removeItem() {
+    document.getElementById("warn").innerText = "";
   const regex = new RegExp("[0-9]{1}");
   var tableItems = document.querySelectorAll("td");
   console.log(tableItems);
 
   var removalInput = document.getElementById("removalInput").value;
+  if(removalInput > tableItems.length){
+    document.getElementById("warn").innerText = "This item does not exist!";
+
+  }
   for (i = 0; i < tableItems.length; i++) {
     console.log(tableItems[i].innerText);
     if (tableItems[i].innerText === removalInput) {
